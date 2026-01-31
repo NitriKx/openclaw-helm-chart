@@ -1,0 +1,12 @@
+# Test with extraManifests
+secrets:
+  test-key: "test-value"
+
+extraManifests:
+  - apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: extra-test-config
+      namespace: {{.Release.Namespace}}
+    data:
+      extra-key: "extra-value"

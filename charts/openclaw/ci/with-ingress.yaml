@@ -1,0 +1,12 @@
+# Test with ingress enabled
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: openclaw-test.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+secrets:
+  test-key: "test-value"
