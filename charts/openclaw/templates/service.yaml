@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{include "openclaw.fullname" .}}
+  labels:
+    {{- include "openclaw.labels" . | nindent 4}}
+{{- with .Values.service.annotations}}
+  annotations:
+    {{- toYaml . | nindent 4}}
+{{- end}}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.apiport }}
+      targetPort: http-api
+      protocol: TCP
+      name: http-api
+    - port: {{ .Values.service.controlPlanePort }}
+      targetPort: http-control-plane
+      protocol: TCP
+      name: http-control-plane
+  selector:
+    {{- include "openclaw.selectorLabels" . | nindent 4 }}
