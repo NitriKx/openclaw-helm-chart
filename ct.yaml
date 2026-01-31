@@ -1,0 +1,29 @@
+# Configuration for chart-testing (ct)
+# See https://github.com/helm/chart-testing
+
+# The directory containing the charts to test
+chart-dirs:
+  - charts
+
+# The charts repo name to use in the helm repo add command
+chart-repos:
+  - bitnami=https://charts.bitnami.com/bitnami
+
+# Run helm lint against the chart
+helm-extra-args: --timeout 600s
+
+# Skip chart compatibility check for unsupported Kubernetes versions
+check-version-increment: true
+
+# Upgrade previous chart releases
+upgrade: true
+
+# Skip running tests during chart install
+# We disable this because the connection test requires the service to be ready
+skip-missing-values: false
+
+# Additional linting tools
+additional-commands: []
+
+# yamllint configuration
+yamllint-config: .yamllint

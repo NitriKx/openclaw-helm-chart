@@ -1,0 +1,24 @@
+# Helm chart artifacts
+*.tgz
+charts/*/charts/
+charts/*/*.lock
+
+# IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.cr-release-packages/
+.cr-index/
+
+# Temporary files
+tmp/
+temp/
