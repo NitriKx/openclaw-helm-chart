@@ -1,0 +1,16 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "package-name": "moltbot-helm-chart",
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        {
+          "type": "yaml",
+          "path": "charts/openclaw/Chart.yaml",
+          "jsonpath": "$.version"
+        }
+      ]
+    }
+  }
+}
