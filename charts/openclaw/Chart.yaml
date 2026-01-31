@@ -1,0 +1,48 @@
+apiVersion: v2
+name: openclaw
+description: A Helm chart for deploying Moltbot application on Kubernetes
+type: application
+
+# This is the chart version. This version number should increment each time you make changes
+# to the chart and its templates, including the app version.
+version: 0.1.0
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are expected to
+# follow Semantic Versioning (https://semver.org/)
+appVersion: "latest"  # renovate: datasource=docker depName=moltbot/moltbot
+
+keywords:
+  - moltbot
+  - openclaw
+  - application
+
+maintainers:
+  - name: moltbot-team
+    email: maintainer@example.com
+
+home: https://github.com/yourusername/moltbot-helm-chart
+sources:
+  - https://github.com/yourusername/moltbot-helm-chart
+  - https://hub.docker.com/r/moltbot/moltbot
+
+icon: https://raw.githubusercontent.com/yourusername/moltbot-helm-chart/main/assets/logo.png
+
+annotations:
+  # Artifact Hub specific annotations
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial release of the Helm chart
+  artifacthub.io/links: |
+    - name: Docker Hub
+      url: https://hub.docker.com/r/moltbot/moltbot
+  artifacthub.io/maintainers: |
+    - name: Moltbot Team
+      email: maintainer@example.com
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/operator: "false"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/prerelease: "false"
+  artifacthub.io/recommendations: |
+    - url: https://artifacthub.io/packages/helm/stable/nginx-ingress
+  artifacthub.io/containsSecurityUpdates: "false"

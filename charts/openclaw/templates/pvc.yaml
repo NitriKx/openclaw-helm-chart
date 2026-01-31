@@ -1,0 +1,36 @@
+{{- if and .Values.persistence.config.enabled (not .Values.persistence.config.existingClaim) }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "openclaw.fullname" . }}-config
+  labels:
+    {{- include "openclaw.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    {{- toYaml .Values.persistence.config.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.config.size }}
+  {{- if .Values.persistence.config.storageClassName }}
+  storageClassName: {{ .Values.persistence.config.storageClassName }}
+  {{- end }}
+{{- end }}
+{{- if and .Values.persistence.workspace.enabled (not .Values.persistence.workspace.existingClaim) }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "openclaw.fullname" . }}-workspace
+  labels:
+    {{- include "openclaw.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    {{- toYaml .Values.persistence.workspace.accessModes | nindent 4 }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.workspace.size }}
+  {{- if .Values.persistence.workspace.storageClassName }}
+  storageClassName: {{ .Values.persistence.workspace.storageClassName }}
+  {{- end }}
+{{- end }}
