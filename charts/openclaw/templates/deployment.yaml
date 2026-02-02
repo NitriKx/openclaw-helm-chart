@@ -47,7 +47,7 @@ spec:
         - name: http-control
           containerPort: 18790
           protocol: TCP
-        command: ["node", "dist/index.js", "gateway", "--allow-unconfigured"]
+        command: ["node", "dist/index.js", "gateway", "--allow-unconfigured","--bind","lan"]
         {{- if .Values.livenessProbe }}
         livenessProbe:
           {{- toYaml .Values.livenessProbe | nindent 12 }}
