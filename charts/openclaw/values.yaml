@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   # Docker registry (leave empty for Docker Hub)
   registry: ""
-  repository: moltbot/moltbot
+  repository: alpine/openclaw
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
