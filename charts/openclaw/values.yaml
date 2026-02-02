@@ -77,7 +77,7 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /chat
+    path: /
     port: http-api
   initialDelaySeconds: 30
   periodSeconds: 10
@@ -86,7 +86,7 @@ livenessProbe:
 
 readinessProbe:
   httpGet:
-    path: /chat
+    path: /
     port: http-api
   initialDelaySeconds: 30
   periodSeconds: 5
