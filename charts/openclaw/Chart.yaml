@@ -18,15 +18,15 @@ keywords:
   - application
 
 maintainers:
-  - name: moltbot-team
-    email: maintainer@example.com
+  - name: NitriKx
+    email: benoit@sauve.re
 
-home: https://github.com/yourusername/moltbot-helm-chart
+home: https://github.com/NitriKx/openclaw-helm-chart
 sources:
-  - https://github.com/yourusername/moltbot-helm-chart
-  - https://hub.docker.com/r/moltbot/moltbot
+  - https://github.com/NitriKx/openclaw-helm-chart
+  - https://hub.docker.com/r/alpine/openclaw
 
-icon: https://raw.githubusercontent.com/yourusername/moltbot-helm-chart/main/assets/logo.png
+icon: https://raw.githubusercontent.com/NitriKx/openclaw-helm-chart/main/assets/logo.png
 
 annotations:
   # Artifact Hub specific annotations
@@ -35,10 +35,10 @@ annotations:
       description: Initial release of the Helm chart
   artifacthub.io/links: |
     - name: Docker Hub
-      url: https://hub.docker.com/r/moltbot/moltbot
+      url: https://hub.docker.com/r/alpine/openclaw
   artifacthub.io/maintainers: |
-    - name: Moltbot Team
-      email: maintainer@example.com
+    - name: NitriKx
+      email: benoit@sauve.re
   artifacthub.io/license: Apache-2.0
   artifacthub.io/operator: "false"
   artifacthub.io/operatorCapabilities: Basic Install
